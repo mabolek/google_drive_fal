@@ -1,0 +1,38 @@
+{
+	"name": "mabolek/google-drive-fal",
+	"type": "typo3-cms-extension",
+	"description": "Google Drive Driver for TYPO3's File Abstraction Layer (FAL)",
+	"keywords": [
+		"TYPO3",
+		"extension",
+		"google drive"
+	],
+	"authors": [
+		{
+			"name": "Mathias Bolt Lesniak",
+			"role": "Developer",
+			"email": "mathias@pixelant.no"
+		}
+	],
+	"license": [
+		"GPL-2.0-or-later"
+	],
+	"require": {
+		"typo3/cms-core": "^9.5 || ^10.1",
+		"typo3/cms-frontend": "^9.5 || ^10.1",
+		"google/apiclient": "^2.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"Mabolek\\GoogleDriveFal\\": "Classes"
+		}
+	},
+	"replace": {
+		"typo3-ter/google-drive-fal": "self.version"
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "google-drive-fal"
+		}
+	}
+}
