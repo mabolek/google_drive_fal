@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<T3DataStructure>
+	<meta>
+		<langDisable>1</langDisable>
+	</meta>
+	<ROOT>
+		<type>array</type>
+		<el>
+			<rootIdentifier>
+				<TCEforms>
+					<label>Root folder identifier</label>
+					<description>The root folder when connecting TYPO3 to Google Drive. Only documents within this folder and its sub folders will be listed and included in search. You find the identifier in the drive URL. Example: drive.google.com/drive/u/1/folders/[Root folder identifier]</description>
+					<default>root</default>
+					<config>
+						<type>input</type>
+						<size>30</size>
+					</config>
+				</TCEforms>
+			</rootIdentifier>
+		</el>
+	</ROOT>
+</T3DataStructure>
