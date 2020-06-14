@@ -1,7 +1,7 @@
 {
 	"name": "mabolek/google-drive-fal",
 	"type": "typo3-cms-extension",
-	"description": "Google Drive Driver for TYPO3's File Abstraction Layer (FAL)",
+	"description": "Google Drive for FAL: Use Google Drive as File Storage in your TYPO3 installation.",
 	"keywords": [
 		"TYPO3",
 		"extension",
