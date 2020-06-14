@@ -32,7 +32,7 @@
 	},
 	"extra": {
 		"typo3/cms": {
-			"extension-key": "google-drive-fal"
+			"extension-key": "google_drive_fal"
 		}
 	}
 }
