@@ -92,20 +92,6 @@ class GoogleDriveDriver extends AbstractHierarchicalFilesystemDriver
     protected static $listQueryCache = [];
 
     /**
-     * Processing folder
-     *
-     * @var string
-     */
-    protected $processingFolder = '';
-
-    /**
-     * Default processing folder
-     *
-     * @var string
-     */
-    protected $processingFolderDefault = '_processed_';
-
-    /**
      * @var ResourceStorage
      */
     protected $storage = null;
