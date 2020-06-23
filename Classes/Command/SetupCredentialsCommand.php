@@ -45,14 +45,26 @@ class SetupCredentialsCommand extends Command
             $googleClient = new \Google_Client();
             $googleClient->setApplicationName('Google Drive for TYPO3');
             $googleClient->setScopes(Client::SCOPES);
+            $googleClient->setRedirectUri('https://www.example.com/');
             $googleClient->setAccessType('offline');
+            $googleClient->setApprovalPrompt('force');
             $googleClient->setAuthConfig($config);
 
             $question = new Question(sprintf(
-                'Open the following link in your browser: %s and enter the verification link:',
+                'Open the following link in your browser:' . PHP_EOL
+                . PHP_EOL
+                . '%s' . PHP_EOL
+                . PHP_EOL
+                . 'and enter the verification link:',
                 $googleClient->createAuthUrl()
             ));
-            $authCode = $io->askQuestion($question);
+            $authUrl = $io->askQuestion($question);
+
+            list(, $queryString) = explode('?', $authUrl);
+
+            $queryArray = GeneralUtility::explodeUrl2Array($queryString);
+
+            $authCode = $queryArray['code'];
 
             $accessToken = $googleClient->fetchAccessTokenWithAuthCode($authCode);
 
