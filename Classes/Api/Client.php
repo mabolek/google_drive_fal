@@ -49,7 +49,7 @@ class Client
     public function getClient()
     {
         $client = new \Google_Client();
-        $client->setApplicationName('Google Docs Content for TYPO3');
+        $client->setApplicationName('Google Drive for TYPO3');
         $client->setScopes(self::SCOPES);
         $client->setAccessType('offline');
         $client->setAuthConfig($this->getAuthConfig());
@@ -61,8 +61,15 @@ class Client
         $client->setAccessToken($accessToken);
 
         if ($client->isAccessTokenExpired()) {
-            $client->fetchAccessTokenWithRefreshToken($client->getRefreshToken());
-            $this->setToken($client->getAccessToken());
+            $refreshToken = $client->getRefreshToken();
+
+            $client->fetchAccessTokenWithRefreshToken();
+
+            $accessToken = $client->getAccessToken();
+
+            $accessToken['refresh_token'] = $refreshToken;
+
+            $this->setToken($accessToken);
         }
         return $client;
     }
