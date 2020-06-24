@@ -39,7 +39,7 @@ Here's the simple way:
 5. If you do not supply one, the driver will create its own folder for manipulated and temporary images etc. This folder cannot be on the Google Drive itself, so the default is in a folder within `typo3temp/assets/`.
 6. Save and close.
 
-[Example file storage record](https://github.com/mabolek/google_drive_fal/blob/master/Documentation/Images/create-file-storage-record.png?raw=true)
+![Example file storage record](https://github.com/mabolek/google_drive_fal/blob/master/Documentation/Images/create-file-storage-record.png?raw=true)
 
 If you go to the Filelist module, you should see your Google Drive there.
 
